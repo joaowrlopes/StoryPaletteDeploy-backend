@@ -25,7 +25,13 @@ mongoose.connect(MONGODB_URI)
 
 // Rotas
 const booksRouter = require('./routes/books');
+const authorsRouter = require('./routes/authors');
+const genresRouter = require('./routes/genres');
+
+// Usar rotas
 app.use('/api', booksRouter);
+app.use('/api', authorsRouter);
+app.use('/api', genresRouter);
 
 // Rota principal (Root)
 app.get('/', (req, res) => {
